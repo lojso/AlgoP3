@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SortSpace
 {
-    public static class SortLevel
+    public static class Task2
     {
         public static void InsertionSortStep(int[] array, int step, int i)
         {
