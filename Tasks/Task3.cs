@@ -8,7 +8,7 @@ namespace SortSpace
         public static List<int> KnuthSequence( int array_size )
         {
             var seq = new List<int>();
-            for (int i = 1; i < array_size; i = NextElement(i))
+            for (int i = 1; i <= array_size; i = NextElement(i))
             {
                 seq.Add(i);
             }
