@@ -28,7 +28,7 @@ namespace SortSpace
                     if (i1 == i2 - 1 && M[i1] > M[i2])
                     {
                         Swap(M, i1, i2);
-                        continue;
+                        break;
                     }
 
                     if (i1 == i2 || (i1 == i2 - 1 && M[i1] < M[i2]))
