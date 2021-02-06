@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SortSpace
 {
-    public static class SortLevel
+    public static class Task4
     {
         public static int ArrayChunk(int[] M)
         {
