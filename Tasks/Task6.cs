@@ -3,18 +3,27 @@ using System.Collections.Generic;
 
 namespace SortSpace
 {
-    public static class Task5
+    public static class SortLevel
     {
-        public static void QuickSort( int[] array, int left, int right)
+        public static void QuickSortTailOptimization(int[] array, int left, int right)
         {
-            if(left >= right)
-                return;
+            while (left < right)
+            {
+                var pivot = ArrayChunk(array, left, right);
 
-            var baseElement = ArrayChunk(array, left, right);
-            QuickSort(array, left, baseElement - 1);
-            QuickSort(array, baseElement, right);
+                if (pivot - left < right - pivot)
+                {
+                    QuickSortTailOptimization(array, left, pivot - 1);
+                    left = pivot;
+                }
+                else
+                {
+                    QuickSortTailOptimization(array, pivot, right);
+                    right = pivot - 1;
+                }
+            }
         }
-        
+
         public static int ArrayChunk(int[] M, int start, int end)
         {
             while (true)
@@ -47,12 +56,12 @@ namespace SortSpace
                     }
 
                     Swap(M, i, j);
-                    
+
                     if (M[i] == N)
                     {
                         NIndex = i;
                     }
-                    
+
                     if (M[j] == N)
                     {
                         NIndex = j;
