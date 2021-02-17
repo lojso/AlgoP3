@@ -7,9 +7,12 @@ namespace SortSpace
     {
         public static List<int> KthOrderStatisticsStep( int[] Array, int L, int R, int k )
         {
+            var result = new List<int>();
             if (R < 0 || L >= Array.Length)
             {
-                return new List<int>();
+                result.Add(L);
+                result.Add(R);
+                return result;
             }
             
             var pivot = ArrayChunk(Array, L, R);
@@ -23,8 +26,7 @@ namespace SortSpace
             {
                 return KthOrderStatisticsStep(Array, pivot + 1, R, k);
             }
-
-            var result = new List<int>();
+            
             result.Add(L);
             result.Add(R);
             return result;
