@@ -3,27 +3,34 @@ using System.Collections.Generic;
 
 namespace SortSpace
 {
-    public static class Task6
+    public static class SortLevel
     {
-        public static void QuickSortTailOptimization(int[] array, int left, int right)
+        public static List<int> KthOrderStatisticsStep( int[] Array, int L, int R, int k )
         {
-            while (left < right)
+            if (R < 0 || L >= Array.Length)
             {
-                var pivot = ArrayChunk(array, left, right);
-
-                if (pivot - left < right - pivot)
-                {
-                    QuickSortTailOptimization(array, left, pivot - 1);
-                    left = pivot;
-                }
-                else
-                {
-                    QuickSortTailOptimization(array, pivot, right);
-                    right = pivot - 1;
-                }
+                return new List<int>();
             }
-        }
+            
+            var pivot = ArrayChunk(Array, L, R);
 
+            if (Array[pivot] > k)
+            {
+                return KthOrderStatisticsStep(Array, L, pivot - 1, k);
+            }
+
+            if(Array[pivot] < k)
+            {
+                return KthOrderStatisticsStep(Array, pivot + 1, R, k);
+            }
+
+            var result = new List<int>();
+            result.Add(L);
+            result.Add(R);
+            return result;
+        }
+        
+        
         public static int ArrayChunk(int[] M, int start, int end)
         {
             while (true)
