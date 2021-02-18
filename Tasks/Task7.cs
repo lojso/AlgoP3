@@ -23,7 +23,6 @@ namespace SortSpace
             
             result.Add(L);
             result.Add(R);
-            result.Add(Array[pivot]);
             return result;
         }
         
