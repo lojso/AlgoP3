@@ -9,20 +9,26 @@ namespace SortSpace
         {
             var result = new List<int>();
 
-            var pivot = ArrayChunk(Array, L, R);
+            var N = ArrayChunk(Array, L, R);
 
-            if (pivot > k)
+            if (N > k)
             {
-                return KthOrderStatisticsStep(Array, L, pivot - 1, k);
+                result.Add(L);
+                result.Add(N - 1);
             }
 
-            if (pivot < k)
+            if (N < k)
             {
-                return KthOrderStatisticsStep(Array, pivot + 1, R, k);
+                result.Add(N + 1);
+                result.Add(R);
+            }
+
+            if (N == k)
+            {
+                result.Add(L);
+                result.Add(R);
             }
             
-            result.Add(L);
-            result.Add(R);
             return result;
         }
         
