@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SortSpace
 {
-    public static class SortLevel
+    public static class Task7
     {
         public static List<int> KthOrderStatisticsStep( int[] Array, int L, int R, int k )
         {
