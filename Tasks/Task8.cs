@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SortSpace
 {
-    public static class SortLevel
+    public static class Task8
     {
         public static List<int> MergeSort(List<int> array)
         {
