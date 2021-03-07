@@ -19,15 +19,16 @@ namespace SortSpace
 
         public int index(string s)
         {
-            return GetCharNum(s);
+            var index = StringToNum(s);
+            return index;
         }
 
         public bool add(string s)
         {
-            var num = StringToNum(s);
-            if(num == -1)
+            var index = StringToNum(s);
+            if(index == -1)
                 return false;
-            items[num] = s;
+            items[index] = s;
             return true;
         }
 
