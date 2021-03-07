@@ -10,7 +10,7 @@ namespace SortSpace
         
         public ksort()
         {
-            items = new string[799];
+            items = new string[800];
             for (int i = 0; i < items.Length; i++)
             {
                 items[i] = null;
