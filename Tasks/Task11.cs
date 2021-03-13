@@ -28,7 +28,7 @@ namespace SortSpace
 
             if (N < _array[mid])
             {
-                Right = mid;
+                Right = mid - 1;
             }
             else if (N < _array[mid])
             {
