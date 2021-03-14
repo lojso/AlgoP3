@@ -30,7 +30,7 @@ namespace SortSpace
             {
                 Right = mid - 1;
             }
-            else if (N < _array[mid])
+            else if (N > _array[mid])
             {
                 Left = mid + 1;
             }
