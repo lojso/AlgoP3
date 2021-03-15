@@ -9,19 +9,21 @@ namespace SortSpace
         public int Right;
 
         private readonly int[] _array;
-        private bool _wasElementFound;
+        private int _searchStatus;
 
         public BinarySearch(int[] array)
         {
             _array = array;
             Left = 0;
             Right = array.Length - 1;
-            _wasElementFound = false;
+            _searchStatus = 0;
+            
+            CheckSearchFinish();
         }
 
         public void Step(int N)
         {
-            if(Left > Right)
+            if(_searchStatus != 0)
                 return;
             
             var mid = (Left + Right) / 2;
@@ -36,19 +38,23 @@ namespace SortSpace
             }
             else
             {
-                _wasElementFound = true;
+                _searchStatus = 1;
+            }
+
+            CheckSearchFinish();
+        }
+
+        private void CheckSearchFinish()
+        {
+            if (_searchStatus == 0 && Left > Right)
+            {
+                _searchStatus = -1;
             }
         }
 
         public int GetResult()
         {
-            if (_wasElementFound)
-                return 1;
-
-            if (Left > Right)
-                return -1;
-            
-            return 0;
+            return _searchStatus;
         }
     }
 }
