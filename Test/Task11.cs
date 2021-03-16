@@ -160,51 +160,33 @@ namespace Test
              
             bsearch.Step(49);
             Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 0);
+            Assert.True(bsearch.Right == 48);
+            
             bsearch.Step(49);
             Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 25);
+            Assert.True(bsearch.Right == 48);
+            
             bsearch.Step(49);
             Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 37);
+            Assert.True(bsearch.Right == 48);
+            
             bsearch.Step(49);
             Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 43);
+            Assert.True(bsearch.Right == 48);
+            
             bsearch.Step(49);
             Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 46);
+            Assert.True(bsearch.Right == 48);
+            
             bsearch.Step(49);
             Assert.True(bsearch.GetResult() == 1);
-            bsearch.Step(49);
-            Assert.True(bsearch.GetResult() == 1);
-            // Assert.True(bsearch.GetResult() == 0);
-            // Assert.True(bsearch.Left == 0);
-            // Assert.True(bsearch.Right == 48);
-            //
-            // bsearch.Step(49);
-            // Assert.True(bsearch.GetResult() == 0);
-            // Assert.True(bsearch.Left == 25);
-            // Assert.True(bsearch.Right == 48);
-            //
-            // bsearch.Step(49);
-            // Assert.True(bsearch.GetResult() == 0);
-            // Assert.True(bsearch.Left == 37);
-            // Assert.True(bsearch.Right == 48);
-            //
-            // bsearch.Step(49);
-            // Assert.True(bsearch.GetResult() == 0);
-            // Assert.True(bsearch.Left == 43);
-            // Assert.True(bsearch.Right == 48);
-            //
-            // bsearch.Step(49);
-            // Assert.True(bsearch.GetResult() == 0);
-            // Assert.True(bsearch.Left == 46);
-            // Assert.True(bsearch.Right == 48);
-            //
-            // bsearch.Step(49);
-            // Assert.True(bsearch.GetResult() == 0);
-            // Assert.True(bsearch.Left == 48);
-            // Assert.True(bsearch.Right == 48);
-            //
-            // bsearch.Step(49);
-            // Assert.True(bsearch.GetResult() == 1);
-            // Assert.True(bsearch.Left == 48);
-            // Assert.True(bsearch.Right == 48);
+            Assert.True(bsearch.Left == 48);
+            Assert.True(bsearch.Right == 48);
         }
 
         private int[] GenerateArray(int from, int toIncluding)
