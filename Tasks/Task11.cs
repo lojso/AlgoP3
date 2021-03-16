@@ -16,9 +16,7 @@ namespace SortSpace
             _array = array;
             Left = 0;
             Right = array.Length - 1;
-            _searchStatus = 0;
-            
-            CheckSearchFinish();
+            _searchStatus = (Left > Right) ? -1 : 0;
         }
 
         public void Step(int N)
@@ -41,14 +39,21 @@ namespace SortSpace
                 _searchStatus = 1;
             }
 
-            CheckSearchFinish();
+            CheckSearchFinish(N);
         }
 
-        private void CheckSearchFinish()
+        private void CheckSearchFinish(int val)
         {
-            if (_searchStatus == 0 && Left > Right)
+            if(_searchStatus != 0)
+                return;
+            
+            if (Left > Right)
             {
                 _searchStatus = -1;
+            }
+            else if (Right - Left <= 1 && _array[Left] == val)
+            {
+                _searchStatus = 1;
             }
         }
 
