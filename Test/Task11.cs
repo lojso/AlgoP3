@@ -169,5 +169,58 @@ namespace Test
             Assert.True(bsearch.Left == 1);
             Assert.True(bsearch.Right == 1);
         }
+        
+        [Test]
+        public void Array_99_Search49()
+        {
+            var arr = GenerateArray(1, 99);
+            var bsearch = new BinarySearch(arr);
+             
+            bsearch.Step(49);
+            Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 0);
+            Assert.True(bsearch.Right == 48);
+            
+            bsearch.Step(49);
+            Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 25);
+            Assert.True(bsearch.Right == 48);
+            
+            bsearch.Step(49);
+            Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 37);
+            Assert.True(bsearch.Right == 48);
+            
+            bsearch.Step(49);
+            Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 43);
+            Assert.True(bsearch.Right == 48);
+            
+            bsearch.Step(49);
+            Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 46);
+            Assert.True(bsearch.Right == 48);
+            
+            bsearch.Step(49);
+            Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.Left == 48);
+            Assert.True(bsearch.Right == 48);
+            
+            bsearch.Step(49);
+            Assert.True(bsearch.GetResult() == 1);
+            Assert.True(bsearch.Left == 48);
+            Assert.True(bsearch.Right == 48);
+        }
+
+        private int[] GenerateArray(int from, int toIncluding)
+        {
+            int[] arr = new int[toIncluding - from + 1];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = i + from;
+            }
+
+            return arr;
+        }
     }
 }
