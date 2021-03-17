@@ -63,15 +63,10 @@ namespace Test
              
             bsearch.Step(4);
             
-            Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.GetResult() == -1);
             Assert.True(bsearch.Left == 2);
             Assert.True(bsearch.Right == 2);
             
-            bsearch.Step(4);
-            
-            Assert.True(bsearch.GetResult() == -1);
-            Assert.True(bsearch.Left == 3);
-            Assert.True(bsearch.Right == 2);
         }
 
         [Test]
@@ -81,15 +76,10 @@ namespace Test
              
             bsearch.Step(0);
             
-            Assert.True(bsearch.GetResult() == 0);
+            Assert.True(bsearch.GetResult() == -1);
             Assert.True(bsearch.Left == 0);
             Assert.True(bsearch.Right == 0);
             
-            bsearch.Step(0);
-            
-            Assert.True(bsearch.GetResult() == -1);
-            Assert.True(bsearch.Left == 0);
-            Assert.True(bsearch.Right == -1);
         }
         
         [Test]

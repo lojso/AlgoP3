@@ -51,9 +51,16 @@ namespace SortSpace
             {
                 _searchStatus = -1;
             }
-            else if (Right - Left <= 1 && _array[Left] == val)
+            else if (Right - Left <= 1 )
             {
-                _searchStatus = 1;
+                if(_array[Left] == val)
+                {
+                    _searchStatus = 1;
+                }
+                else
+                {
+                    _searchStatus = -1;
+                }
             }
         }
 
